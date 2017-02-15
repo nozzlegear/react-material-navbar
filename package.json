@@ -1,0 +1,45 @@
+{
+    "name": "react-material-navbar",
+    "version": "1.0.4",
+    "description": "A simple React navbar inspired by Material UI, complete with full TypeScript definitions.",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "npm run tsc && npm run webpack && npm run css",
+        "css": "stylus -c --include-css -u autoprefixer-stylus ./css/all.styl -o ./dist",
+        "css:watch": "stylus -c --include-css -u autoprefixer-stylus ./css/all.styl -o ./dist -w",
+        "tsc": "tsc -p .",
+        "webpack": "webpack dist/index.js dist/bundled.js && webpack dist/tests/test.js dist/tests/bundled.js",
+        "prepublish": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nozzlegear/react-material-navbar.git"
+    },
+    "keywords": [
+        "react",
+        "winjs",
+        "dialog",
+        "windows",
+        "uwp"
+    ],
+    "author": "Joshua Harms <joshua@nozzlegear.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/nozzlegear/react-material-navbar/issues"
+    },
+    "homepage": "https://github.com/nozzlegear/react-material-navbar#readme",
+    "dependencies": {
+        "react": "^15.4.2"
+    },
+    "devDependencies": {
+        "@types/react": "^15.0.4",
+        "@types/react-dom": "^0.14.23",
+        "autoprefixer-stylus": "^0.13.0",
+        "react-dom": "^15.4.2",
+        "react-icons": "^2.2.3",
+        "stylus": "^0.54.5",
+        "typescript": "^2.1.5",
+        "utilities.styl": "^1.3.0",
+        "webpack": "^2.2.1"
+    }
+}
