@@ -2,7 +2,6 @@ import Navbar from "../";
 import * as React from "react";
 import { render } from "react-dom";
 import HamburgerIcon = require("react-icons/lib/md/menu");
-import VerticalIcon = require("react-icons/lib/md/more-vert");
 
 export type NavType = ( "purple" | "left-action" | "right-action" | "all-actions" | "constrained" )
 
@@ -15,7 +14,7 @@ export default class TestHarness extends React.Component<any, IState> {
         super(props, context);
 
         this.state = {
-            type: "left-action"
+            type: "all-actions"
         };
     }
 
@@ -23,13 +22,23 @@ export default class TestHarness extends React.Component<any, IState> {
 
     private buildNav(type: NavType) {
 
+        let rightAction: JSX.Element;
+
+        if (type === "right-action" || type === "all-actions") {
+            rightAction = (
+                <a href={`#`}>
+                    {`Support`}
+                </a>
+            )
+        }
+
         return (
             <div style={{width: type === "constrained" ? "300px" : undefined}}>
                 <Navbar
                     key={type}
                     title={`React Material Navbar`}
                     leftAction={type !== "right-action" ? <HamburgerIcon  size={24} /> : undefined}
-                    rightAction={type === "right-action" || type === "all-actions" ? <VerticalIcon size={24} /> : undefined}
+                    rightAction={rightAction}
                     background={type === "purple" ? "#311B92" : undefined}
                     color={type === "purple" ? "#ffffff" : undefined} />
             </div>

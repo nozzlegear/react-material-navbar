@@ -16,6 +16,20 @@ nav.react-material-navbar {
     height: height;
     align-items: center;
 
+	a {
+		color: #fff;
+		text-decoration: none;
+        font-size: 16px;
+        padding: 8px 20px;
+        transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+        border-radius: 2px;
+
+		&:hover {
+			text-decoration: none;
+            background: rgba(255,255,255,.1);
+		}
+	}
+
     .react-material-navbar-left {
         padding: actionPadding;
         margin: 0 actionMargin 0 0;
