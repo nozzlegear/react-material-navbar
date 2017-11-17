@@ -1,3 +1,4 @@
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
 export interface IProps {
@@ -18,7 +19,7 @@ const Navbar: React.StatelessComponent<IProps> = function (props) {
     }
 
     return (
-        <nav className={`react-material-navbar`} style={{...props.style, ...colorProps}}>
+        <nav className={`react-material-navbar`} style={{ ...props.style, ...colorProps }}>
             <div className="react-material-navbar-left">
                 {props.leftAction}
             </div>
@@ -33,14 +34,14 @@ const Navbar: React.StatelessComponent<IProps> = function (props) {
 }
 
 const propTypes: Record<keyof IProps, React.Validator<any>> = {
-    title: React.PropTypes.string.isRequired,
-    color: React.PropTypes.string,
-    background: React.PropTypes.string,
-    leftAction:  React.PropTypes.element,
-    rightAction: React.PropTypes.element,
-    style: React.PropTypes.object,
-    key: React.PropTypes.any,
-    ref: React.PropTypes.any,        
+    title: PropTypes.string.isRequired,
+    color: PropTypes.string,
+    background: PropTypes.string,
+    leftAction: PropTypes.element,
+    rightAction: PropTypes.element,
+    style: PropTypes.object,
+    key: PropTypes.any,
+    ref: PropTypes.any,
 }
 
 const defaultProps: Partial<IProps> = {
