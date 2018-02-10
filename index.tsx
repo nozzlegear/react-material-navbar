@@ -19,11 +19,11 @@ const Navbar: React.StatelessComponent<IProps> = function (props) {
     }
 
     return (
-        <nav className={`react-material-navbar`} style={{ ...props.style, ...colorProps }}>
+        <nav className={"react-material-navbar"} style={{ ...props.style, ...colorProps }}>
             <div className="react-material-navbar-left">
                 {props.leftAction}
             </div>
-            <div className={`react-material-navbar-title`}>
+            <div className={"react-material-navbar-title"}>
                 <span>{props.title}</span>
             </div>
             <div className="react-material-navbar-right">
